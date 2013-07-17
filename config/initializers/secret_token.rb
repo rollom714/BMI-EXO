@@ -9,4 +9,21 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BMIExo::Application.config.secret_key_base = 'b6e89f1c0312000701cc6eaa92dcfb30aca61095d9845a352f5fc9acaf54c1638eb78008bb3a54d92734917ad1abd76b7af34176507ebd23739bc8196191de9a'
+# BMIExo::Application.config.secret_key_base = 'b6e89f1c0312000701cc6eaa92dcfb30aca61095d9845a352f5fc9acaf54c1638eb78008bb3a54d92734917ad1abd76b7af34176507ebd23739bc8196191de9a'
+
+require 'securerandom'
+
+def secure_token
+	token_file = rails.root.join('.secret')
+	if File.exist?(token_file)
+		#use the existing token
+		File.read(token_file).chomp
+	else
+		#Generate a new token and store it in token_file.
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
+BMIExo::Application.config.secrete_key_base = secure_token
