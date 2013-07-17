@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BMI-Exo Projects | < %=yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-	<%= yield %>
-
-	<div class="footer">
-		<%= image_tag("nih_logo.png") %>
-		<p>
-			    Grant Number: 5R01NS081854-02 
-		</p>
-	</div>
-</body>
+	<head>
+	  <title>BMI-Exo Projects | <%= yield(:title) %></title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <%= render 'layouts/shim' %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>
