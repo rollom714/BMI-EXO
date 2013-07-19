@@ -6,13 +6,13 @@
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <%= render :partial => 'layouts/shim.html.erb' %>
+	  <%= render 'layouts/shim.html.erb' %>
 	</head>
 	<body>
-		<%= render :partial => 'layouts/header.html.erb' %>
+		<%= render 'layouts/header.html.erb' %>
 		<div class="container">
 			<%= yield %>
-			<%= render :partial => 'layouts/footer.html.erb' %>
+			<%= render 'layouts/footer.html.erb' %>
 		</div>
 	</body>
 </html>
