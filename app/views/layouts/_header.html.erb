@@ -11,12 +11,12 @@
 <header class="mainHeader">
 	<nav>
 		<ul>
-			<li class="active"><%= link_to "Home", root_path, class:"linkText"  %></li>
+			<li class="home"><%= link_to "Home", root_path, class:"linkText"  %></li>
 			<li><%= link_to "People", '#', class:"linkText" %></li>
-			<li><%= link_to "News", '#', class:"linkText"  %></li>
+			<li class="news"> <%= link_to "News", news_path, class:"linkText"  %></li>
 			<li><%= link_to "Research", '#', class:"linkText"  %></li>
 			<li><%= link_to "Publications", '#', class:"linkText"  %></li>
-			<li><%= link_to "Contact", contact_path, class:"linkText"  %></li>
+			<li class="contact"><%= link_to "Contact", contact_path, class:"linkText"  %></li>
 			<li><%= link_to "Sign-in", '#', class:"linkText"  %></li>
 		</ul>
 	</nav>

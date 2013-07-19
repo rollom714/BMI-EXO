@@ -44,42 +44,42 @@ h2{
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	ul {
-		list-style:none;
-		margin:0 auto;
-		li {
-			display: inline;
-			.linkText:link, .linkText:visited{
-				text-decoration:none;
-				margin-left: 20px;
-				font-size: 1.2em;
-				color: #999;    /*light grey*/
-				text-transform:uppercase;
-				letter-spacing: -1px;
-				padding: 5px 15px;
-				font-weight: bold;
-				text-decoration:none;
-				display: inline-block;
-				height: 34.5px;
-				&:hover,&:active, {
-					color:black;
-					background-color:#999;
-					text-shadow: none;
-					border-radius: 3px;
-					-moz-border-radius: 3px;
-					-webkit-border-radius: 3px;
-				}
-			}
-		}
-	}
-	.active .linkText:link, .active .linkText:visited {
-		color:black;
-		background-color:#999;    /*light grey*/
-		text-shadow: none;
-		border-radius: 3px;
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-	}
+}
+
+.mainHeader ul {
+	list-style:none;
+	margin:0 auto;
+}
+.mainHeader ul li {
+	display: inline;
+}
+
+.mainHeader nav .linkText{
+	text-decoration:none;
+	margin-left: 20px;
+	font-size: 1.2em;
+	color: #999;    /*light grey*/
+	text-transform:uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+				
+.mainHeader nav .linkText:link, .mainHeader nav .linkText:visited {
+	text-decoration:none;
+	display: inline-block;
+	padding: 5px 15px;
+	height: 34.5px;
+}
+.mainHeader nav .linkText:hover, .mainHeader nav .linkText:active,
+#Home .home .linkText:link, #Home .home .linkText:visited,
+#Contact .contact .linkText:link, #Contact .contact .linkText:visited,
+#News .news .linkText:link, #News .news .linkText:visited{
+	color:black;
+	background:#999;    /*light grey*/
+	text-shadow: none !important;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
 /* Footer */
