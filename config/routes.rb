@@ -1,8 +1,10 @@
 BMIExo::Application.routes.draw do
   
+  resources :posts
+  
   root 'welcome#index'
   match '/contact', to: 'welcome#contact', via: 'get'
-  match '/news', to: 'news#new', via: 'get'
+  match '/news', to: 'post#index', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
