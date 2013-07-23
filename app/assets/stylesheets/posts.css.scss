@@ -1,3 +1,54 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Place all the styles related to the posts controller here. */
+
+/* Editing Links */
+
+#News .container #addNews {
+	text-align:right;
+	padding-bottom:1%;
+	#linkAdd {
+	text-decoration: none;
+	color:black;
+	font-weight:bold;
+	font-size:1 em;
+	}
+}
+
+/* Body style */
+
+.contentNews {
+	width: 80%;
+	margin: 0 auto;
+	background: #e6e6e6;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 2% 4%;	
+	margin-bottom: 3%;
+	.options .full{
+		text-decoration:none;
+		color:black;
+		margin-top:2%;
+		font-weight:bold;
+	}
+	.options .changeLink{
+		text-decoration:none;
+		color:black;
+		float:right;
+		padding:0% 1%;
+		font-weight:bold;
+	}
+	.form {
+		width: 100%;
+		margin: 0 120px;
+	}
+}
+
+.newsTitle{
+	font-size: 1.6em;
+	letter-spacing: -1px;
+	margin-bottom: 10px;
+	text-align: left;
+	font-weight: 400;
+	border-bottom: 2px solid black;
+	line-height: 30px;
+}

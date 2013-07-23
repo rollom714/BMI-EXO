@@ -1,22 +1,24 @@
 <% provide(:title, "News") %>
-<h1>News</h1>
-<%= link_to 'Add News', new_post_path %>
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-		<th></th>
-		<th></th>
-		<th></th>
-	</tr>
-	
-	<% @posts.each do |post| %>
-		<tr>
-			<td><%= post.title %></td>
-			<td><%= post.text %></td>
-			<td><%= link_to 'Show', post_path(post) %></td>
-			<td><%= link_to 'Edit', edit_post_path(post) %></td>
-			<td><%= link_to 'Destroy', post_path(post), method: :delete, data:{confirm:'Are you sure?'} %></td>
-		</tr>
-	<%end %>
-</table>
+
+<div class="header">
+	<h2>News</h2>
+</div>
+<div id="addNews">
+	<%= link_to "Add News", new_post_path, id:"linkAdd" %>
+</div>
+
+<% @posts.each do |post| %>
+	<div class="contentNews">
+		<div class="newsTitle">
+			<%= post.title  %>
+		</div>
+		<div class="article">
+			<%= truncate(post.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
+		</div>
+		<div class="options">
+			<%= link_to "Full-Text", post_path(post), class:"full" %>
+			<%= link_to "Destroy", post_path(post), method: :delete, data:{confirm:"Are you sure?"}, class:"changeLink" %>
+			<%= link_to "Edit", edit_post_path(post), class:"changeLink" %>
+		</div>
+	</div>
+<%end %>
