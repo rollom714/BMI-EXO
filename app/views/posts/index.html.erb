@@ -1,11 +1,13 @@
 <% provide(:title, "News") %>
-
+<div id="addNews">
+	<% if signed_in? %>
+		<%= link_to "Add News", new_post_path, id:"linkAdd" %>
+	<% end %>
+</div>
 <div class="header">
 	<h2>News</h2>
 </div>
-<div id="addNews">
-	<%= link_to "Add News", new_post_path, id:"linkAdd" %>
-</div>
+
 
 <% @posts.each do |post| %>
 	<div class="contentNews">
@@ -15,10 +17,13 @@
 		<div class="article">
 			<%= truncate(post.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
 		</div>
+		<br>
 		<div class="options">
 			<%= link_to "Full-Text", post_path(post), class:"full" %>
-			<%= link_to "Destroy", post_path(post), method: :delete, data:{confirm:"Are you sure?"}, class:"changeLink" %>
-			<%= link_to "Edit", edit_post_path(post), class:"changeLink" %>
+			<% if signed_in? %>
+				<%= link_to "Destroy", post_path(post), method: :delete, data:{confirm:"Are you sure?"}, class:"changeLink" %>
+				<%= link_to "Edit", edit_post_path(post), class:"changeLink" %>
+			<% end %>
 		</div>
 	</div>
 <%end %>

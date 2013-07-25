@@ -1,0 +1,28 @@
+<% provide(:title, "Sign-in") %>
+<div class="header"> 
+	<h2>Sign in</h2>
+</div>
+<p id="signLink">New user? <%= link_to "Sign up", signup_path %></p>
+<div class="mainContent">
+	
+	<%= form_for(:session, url:sessions_path) do |f| %>
+		<%= render 'shared/error_messages' %>
+		<div class= "subContentLabel">
+			<%= f.label :email %>
+		</div>
+		<div class= "subContentText">
+			<%= f.text_field :email %><br><br>
+		</div>
+		<div class= "subContentLabel1">
+			<%= f.label :password %>
+		</div>
+		<div class= "subContentText1">
+			<%= f.password_field :password %><br>
+		</div>
+		
+		<div class= "subContentButton">
+			<%= f.submit "Sign in" %>
+		</div>
+	<% end %>
+	
+</div>

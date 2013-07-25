@@ -34,11 +34,12 @@ h2{
 	border-bottom: 2px solid #eaeaea;
 }
 
+
 /* Main Navigation */
 
 .mainHeader nav {
 	background:black;
-	margin: 0 auto 30px auto;
+	margin: 30px auto 30px auto;
 	text-align:left;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -72,6 +73,7 @@ h2{
 .mainHeader nav .linkText:hover, .mainHeader nav .linkText:active,
 #Home .home .linkText:link, #Home .home .linkText:visited,
 #Contact .contact .linkText:link, #Contact .contact .linkText:visited,
+#Sign-in .signIn .linkText:link, #Sign-in .signIn .linkText:visited,
 #News .news .linkText:link, #News .news .linkText:visited{
 	color:black;
 	background:#999;    /*light grey*/
@@ -97,4 +99,3 @@ footer {
 		line-height: 50px;
 	}
 }
-

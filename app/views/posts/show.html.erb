@@ -5,8 +5,11 @@
 	<div class="article">
 		<%= @post.text %>
 	</div>
+	<br>
 	<div class="options">
 		<%= link_to "Back", posts_path, class:"full"  %>
-		<%= link_to "Edit", edit_post_path(@post), class:"changeLink"  %>
+		<% if signed_in? %>
+			<%= link_to "Edit", edit_post_path(@post), class:"changeLink"  %>
+		<% end %>
 	</div>
 </div>
