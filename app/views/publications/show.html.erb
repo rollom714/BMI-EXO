@@ -1,0 +1,17 @@
+<% provide(:title, "Full Publication") %>
+
+<div class="contentPublication">
+	<div class="publicationTitle">
+		<%= @publication.title  %>
+	</div>
+	<div class="article">
+		<%= @publication.text %>
+	</div>
+	<br>
+	<div class="options">
+		<%= link_to "Back", publications_path, class:"full"  %>
+		<% if signed_in? %>
+			<%= link_to "Edit", edit_publication_path(@publication), class:"changeLink"  %>
+		<% end %>
+	</div>
+</div>

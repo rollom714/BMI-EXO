@@ -1,0 +1,29 @@
+<% provide(:title, "Publications") %>
+<div id="addPublication">
+	<% if signed_in? %>
+		<%= link_to "Add Publication", new_publication_path, id:"linkAdd" %>
+	<% end %>
+</div>
+<div class="header">
+	<h2>Publications</h2>
+</div>
+
+
+<% @publications.each do |publication| %>
+	<div class="contentPublication">
+		<div class="publicationTitle">
+			<%= publication.title  %>
+		</div>
+		<div class="article">
+			<%= truncate(publication.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
+		</div>
+		<br>
+		<div class="options">
+			<%= link_to "Full-Text", publication_path(publication), class:"full" %>
+			<% if signed_in? %>
+				<%= link_to "Destroy", publication_path(publication), method: :delete, data:{confirm:"Are you sure?"}, class:"changeLink" %>
+				<%= link_to "Edit", edit_publication_path(publication), class:"changeLink" %>
+			<% end %>
+		</div>
+	</div>
+<%end %>

@@ -14,8 +14,8 @@
 			<li class="home"><%= link_to "Home", root_path, class:"linkText"  %></li>
 			<li class="people"><%= link_to "People", people_path, class:"linkText" %></li>
 			<li class="news"> <%= link_to "News", posts_path, class:"linkText"  %></li>
-			<li class="research"><%= link_to "Research", '#', class:"linkText"  %></li>
-			<li class="publications"><%= link_to "Publications", '#', class:"linkText"  %></li>
+			<li class="research"><%= link_to "Research", researches_path, class:"linkText"  %></li>
+			<li class="publications"> <%= link_to "Publications", publications_path, class:"linkText"  %></li>
 			<li class="contact"><%= link_to "Contact", contact_path, class:"linkText"  %></li>
 			<% if signed_in? %>
 				<li><%= link_to "Sign Out", signout_path, method:"delete", class:"linkText"  %></li>

@@ -1,0 +1,29 @@
+<% provide(:title, "Research") %>
+<div id="addResearch">
+	<% if signed_in? %>
+		<%= link_to "Add Research", new_research_path, id:"linkAdd" %>
+	<% end %>
+</div>
+<div class="header">
+	<h2>Research</h2>
+</div>
+
+
+<% @researches.each do |research| %>
+	<div class="contentNews">
+		<div class="newsTitle">
+			<%= research.title  %>
+		</div>
+		<div class="article">
+			<%= truncate(research.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
+		</div>
+		<br>
+		<div class="options">
+			<%= link_to "Full-Text", research_path(research), class:"full" %>
+			<% if signed_in? %>
+				<%= link_to "Destroy", research_path(research), method: :delete, data:{confirm:"Are you sure?"}, class:"changeLink" %>
+				<%= link_to "Edit", edit_research_path(research), class:"changeLink" %>
+			<% end %>
+		</div>
+	</div>
+<%end %>

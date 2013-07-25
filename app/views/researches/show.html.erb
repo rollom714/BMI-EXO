@@ -1,0 +1,17 @@
+<% provide(:title, "Full Research") %>
+
+<div class="contentResearch">
+	<div class="researchTitle">
+		<%= @research.title  %>
+	</div>
+	<div class="article">
+		<%= @research.text %>
+	</div>
+	<br>
+	<div class="options">
+		<%= link_to "Back", researches_path, class:"full"  %>
+		<% if signed_in? %>
+			<%= link_to "Edit", edit_research_path(@research), class:"changeLink"  %>
+		<% end %>
+	</div>
+</div>
