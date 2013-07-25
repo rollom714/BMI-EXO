@@ -6,8 +6,11 @@ BMIExo::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   
   root 'welcome#index'
-  match '/contact', to: 'welcome#contact',  via: 'get'
+  match '/people',  to: 'welcome#people',  via: 'get'
   match '/news',    to: 'post#index',       via: 'get'
+  
+  
+  match '/contact', to: 'welcome#contact',  via: 'get'
   match '/signup',  to: 'users#new',        via: 'get'
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
