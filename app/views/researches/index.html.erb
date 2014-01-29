@@ -14,8 +14,12 @@
 		<div class="newsTitle">
 			<%= research.title  %>
 		</div>
-		<div class="article">
-			<%= truncate(research.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
+		<div class="rPicture">
+			<% if research.rAttachment.exists? then %>
+				<%= image_tag research.rAttachment.url %>
+			<% else %>
+				<p> Please add a Research Photo <p>
+			<% end %>
 		</div>
 		<br>
 		<div class="options">

@@ -8,7 +8,7 @@ def new
 	end
 	
 	def create
-		@research = Research.new(params[:research].permit( :title , :text))
+		@research = Research.new(params[:research].permit( :title , :text , :rAttachment))
 		
 		if @research.save
 			redirect_to @research
@@ -16,6 +16,7 @@ def new
 			render 'new'
 		end
 	end
+	
 	
 	def show
 		@research =Research.find(params[:id])
@@ -35,7 +36,7 @@ def new
 	def update
 		@research = Research.find(params[:id])
 		
-		if @research.update(params[:research].permit(:title,:text))
+		if @research.update(params[:research].permit(:title,:text,:rAttachment))
 			redirect_to @research
 		else
 			render 'edit'
@@ -44,6 +45,6 @@ def new
 	
 	private
 		def research_params
-			params.require(:research).permit( :title , :text)
+			params.require(:research).permit( :title , :text, :rAttatchment)
 		end
 end

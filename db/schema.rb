@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725201530) do
+ActiveRecord::Schema.define(version: 20130726152531) do
 
   create_table "news", force: true do |t|
     t.string   "title"
@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20130725201530) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "rAttachment_file_name"
+    t.string   "rAttachment_content_type"
+    t.integer  "rAttachment_file_size"
+    t.datetime "rAttachment_updated_at"
   end
 
   create_table "users", force: true do |t|

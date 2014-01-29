@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
-#ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
@@ -8,6 +7,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem 'paperclip'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
