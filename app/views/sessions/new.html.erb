@@ -3,7 +3,7 @@
 <div class="header"> 
 	<h2>Sign in</h2>
 </div>
-<p id="signLink">New user?  <%=link_to "Sign up", signup_path %></p>     <!--This is the link to sign up  new users. Missing '%' before the link_to-->
+<!--<p id="signLink">New user?  <=link_to "Sign up", signup_path %></p>     This is the link to sign up  new users. Missing '%' before the link_to-->
 <div class="mainContent">
 	
 	<%= form_for(:session, url:sessions_path) do |f| %>

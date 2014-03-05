@@ -12,7 +12,7 @@ BMIExo::Application.routes.draw do
   match '/news',         to: 'posts#index',        via: 'get'
   
   match '/contact',      to: 'welcome#contact',   via: 'get'
-  match '/signup',      to: 'users#new',         via: 'get'	#Sign-up link can be added if needed
+  #match '/signup',      to: 'users#new',         via: 'get'	#Sign-up link can be added if needed
   match '/signin',       to: 'sessions#new',      via: 'get'
   match '/signout',      to: 'sessions#destroy',  via: 'delete'
   
