@@ -10,16 +10,19 @@
 
 
 <% @researches.each do |research| %>
-	<div class="contentNews">
-		<div class="newsTitle">
+	<div class="contentResearch">
+		<!--<div class="rPicture">
+			< if research.rAttachment.exists? then %>
+				<= image_tag research.rAttachment.url %>
+			< else %>
+				<p> Please add a Research Photo <p>
+			< end %>
+		</div>			Need to add % to each statement if we want to add pictures to research-->
+		<div class="researchTitle">
 			<%= research.title  %>
 		</div>
-		<div class="rPicture">
-			<% if research.rAttachment.exists? then %>
-				<%= image_tag research.rAttachment.url %>
-			<% else %>
-				<p> Please add a Research Photo <p>
-			<% end %>
+		<div class="article">
+			<%= truncate(research.text, :separator =>". ", :length => 410, :omission => ". (full text below)") %>
 		</div>
 		<br>
 		<div class="options">

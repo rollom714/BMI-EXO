@@ -1,8 +1,9 @@
+<!-- This page controls the sign-in feature and the sign up feature can be added -->
 <% provide(:title, "Sign-in") %>
 <div class="header"> 
 	<h2>Sign in</h2>
 </div>
-<p id="signLink">New user? <%= link_to "Sign up", signup_path %></p>
+<p id="signLink">New user?  <%=link_to "Sign up", signup_path %></p>     <!--This is the link to sign up  new users. Missing '%' before the link_to-->
 <div class="mainContent">
 	
 	<%= form_for(:session, url:sessions_path) do |f| %>
